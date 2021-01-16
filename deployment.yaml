@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: algoritmeregister-api-service
+spec:
+  selector:
+    app: algoritmeregister-api-service
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: algoritmeregister-api
+  labels:
+    app: algoritmeregister-api-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: algoritmeregister-api-service
+  template:
+    metadata:
+      labels:
+        app: algoritmeregister-api-service
+    spec:
+      imagePullSecrets:
+      - name: pipeline-docker-registry
+      containers:
+      - name: algoritmeregister-api-service
+        image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+        ports:
+        - containerPort: 8000
