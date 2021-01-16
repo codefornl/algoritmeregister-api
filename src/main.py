@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, Response
 from fastapi.openapi.utils import get_openapi
 from starlette.middleware.cors import CORSMiddleware
 from .config import settings, database
-from .routers import algorithm
+from .routers import algorithm, organisation, process
 app = FastAPI()
 
 def custom_openapi():
@@ -39,4 +39,7 @@ app.add_middleware(
 
 # Routers moved to individual files in the ./routers folder
 app.include_router(algorithm.router)
+app.include_router(organisation.router)
+app.include_router(process.router)
+
 app.openapi = custom_openapi
