@@ -18,4 +18,4 @@ COPY . .
 
 EXPOSE 8000
 VOLUME ["/usr/src/app/data"]
-CMD [ "./algoritmeregister.sh" ]
+CMD [ "./algorithmregister.sh" ]

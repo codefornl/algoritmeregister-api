@@ -9,9 +9,9 @@ def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
-        title="Algoritmeregister-api",
+        title="Algorithmregister-api",
         version="0.0.1",
-        description="This is the API for Algoritmeregister",
+        description="This is the API for Algorithmregister",
         routes=app.routes,
     )
     app.openapi_schema = openapi_schema

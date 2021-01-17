@@ -1,5 +1,5 @@
-# algoritmeregister-api
-An API to get remote data, cached in a database, for algoritmeregister
+# algorithmregister-api
+An API to get remote data, cached in a database, for algorithmregister
 
 ## How to start
 
@@ -8,7 +8,7 @@ An API to get remote data, cached in a database, for algoritmeregister
 - Create a Python 3 virtual env named `venv` and activate it.
 - Install requirements inside your virtual env with `python -m pip install -r requirements.txt`
 - Set up and customize the environment variabels, see below
-- Start application with `./algoritmeregister.sh`
+- Start application with `./algorithmregister.sh`
 
 ### Production:
 

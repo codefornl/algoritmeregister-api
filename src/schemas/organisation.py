@@ -1,8 +1,11 @@
+from typing import Optional
 from pydantic import BaseModel
-
+from .contact import ContactItem
 
 class OrganisationItemBase(BaseModel):
-    description: str
+    name: str
+    department: Optional[str]
+    contact: ContactItem
 
 
 class OrganisationItemCreate(OrganisationItemBase):
