@@ -1,11 +1,13 @@
-from typing import Optional
-from pydantic import BaseModel
+from typing import Optional, List
+from pydantic import BaseModel, EmailStr
 from .contact import ContactItem
 
 class OrganisationItemBase(BaseModel):
     name: str
     department: Optional[str]
-    contact: ContactItem
+    email: Optional[EmailStr]
+    phone: Optional[str]
+    contacts: Optional[List[ContactItem]]
 
 
 class OrganisationItemCreate(OrganisationItemBase):

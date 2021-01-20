@@ -42,6 +42,7 @@ async def get_algorithms(limit: int, db: get_db = Depends()):
                 description=fake.text(),
                 link=fake.uri(),
                 tags=tags,
+                type=fake.word(),
                 organisation=o
             )
         )
@@ -57,6 +58,7 @@ async def create_algorithm(item: algorithm.AlgorithmItemCreate, db: get_db = Dep
         description=item.description,
         link=item.link,
         tags=item.tags,
+        type=item.type,
         organisation=item.organisation
     )
 
@@ -89,5 +91,6 @@ async def get_algorithm(item_id: int, db: get_db = Depends()):
         description=fake.text(),
         link=fake.uri(),
         tags=tags,
+        type=fake.word(),
         organisation=o
     )
